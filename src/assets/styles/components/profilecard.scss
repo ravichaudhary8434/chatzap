@@ -1,0 +1,23 @@
+.profilecard {
+  display: flex;
+  margin-bottom: 20px;
+}
+.profilecard__img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.profilecard__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12px;
+
+  div:first-child {
+    font-weight: 400;
+  }
+
+  div:last-child {
+    color: $secondaryText;
+  }
+}

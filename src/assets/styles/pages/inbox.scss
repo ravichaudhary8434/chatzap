@@ -1,0 +1,17 @@
+.inbox {
+  width: 100%;
+  background-color: $secondaryBg;
+  color: $primaryText;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inbox__container {
+  width: 80%;
+  height: 100%;
+  background-color: $primaryBg;
+  border: 1px solid $sepColor;
+  display: flex;
+  border-radius: 5px;
+}

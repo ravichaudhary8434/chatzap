@@ -1,0 +1,13 @@
+// Variables
+@import "./variable.scss";
+
+// All Common Styles
+@import "./all.scss";
+
+// Pages Styles
+@import "./pages/inbox.scss";
+
+// Components Styles
+@import "./components/sidenavbar.scss";
+@import "./components/inbox.scss";
+@import "./components/profilecard.scss";

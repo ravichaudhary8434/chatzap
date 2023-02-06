@@ -1,0 +1,36 @@
+// Styles of all chats
+.allchats {
+  width: 35%;
+  height: 100%;
+  border-right: 1px solid $sepColor;
+  overflow: hidden;
+}
+.allchats__header {
+  padding: 20px;
+  border-bottom: 1px solid $sepColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.allchats__subheader {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+}
+.allchats__container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: calc(100% - 65px);
+}
+
+// Styles of chat container
+.chatcontainer {
+  width: 65%;
+  height: 100%;
+}

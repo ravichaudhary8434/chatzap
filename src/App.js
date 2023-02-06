@@ -1,7 +1,11 @@
+import SideNavbar from "./components/SideNavbar";
+import { Inbox } from "./pages";
+
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello Ravi Chaudhary</h1>
+      <SideNavbar />
+      <Inbox />
     </div>
   );
 };
