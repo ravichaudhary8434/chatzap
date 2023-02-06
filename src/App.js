@@ -1,11 +1,11 @@
 import SideNavbar from "./components/SideNavbar";
-import { Inbox } from "./pages";
+import Router from "./router";
 
 const App = () => {
   return (
     <div className="App">
       <SideNavbar />
-      <Inbox />
+      <Router />
     </div>
   );
 };
