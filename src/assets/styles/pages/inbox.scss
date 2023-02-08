@@ -1,5 +1,6 @@
 .inbox {
   width: 100%;
+  height: 100%;
   background-color: $secondaryBg;
   color: $primaryText;
   padding: 20px;
@@ -14,4 +15,12 @@
   border: 1px solid $sepColor;
   display: flex;
   border-radius: 5px;
+}
+.inbox__container__allchats {
+  width: 35%;
+  height: 100%;
+}
+.inbox__container__singlechat {
+  width: 65%;
+  height: 100%;
 }

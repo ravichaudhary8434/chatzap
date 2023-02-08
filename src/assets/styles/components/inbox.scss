@@ -1,6 +1,6 @@
 // Styles of all chats
 .allchats {
-  width: 35%;
+  width: 100%;
   height: 100%;
   border-right: 1px solid $sepColor;
   overflow: hidden;
@@ -15,14 +15,14 @@
   font-weight: bold;
 }
 .allchats__subheader {
-  padding: 20px 0;
+  padding: 20px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   font-weight: bold;
 }
 .allchats__container {
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -33,4 +33,28 @@
 .chatcontainer {
   width: 65%;
   height: 100%;
+}
+
+// Styles for Send Message component
+.sendmsg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sendmsg img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;
+}
+.sendmsg button {
+  width: 200px;
+  height: 44px;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
 }

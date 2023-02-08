@@ -9,4 +9,13 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
+}
+.App__sidebar {
+  width: 300px;
+  height: 100%;
+}
+.App__container {
+  width: calc(100% - 300px);
+  height: 100%;
 }

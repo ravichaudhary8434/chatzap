@@ -4,8 +4,12 @@ import Router from "./router";
 const App = () => {
   return (
     <div className="App">
-      <SideNavbar />
-      <Router />
+      <div className="App__sidebar">
+        <SideNavbar />
+      </div>
+      <div className="App__container">
+        <Router />
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { Inbox } from "../pages";
 
 const Router = () => (
   <Routes>
-    <Route path="/*" element={<Inbox />} />
+    <Route path="/inbox/*" element={<Inbox />} />
   </Routes>
 );
 export default Router;

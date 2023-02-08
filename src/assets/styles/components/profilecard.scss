@@ -1,6 +1,11 @@
 .profilecard {
   display: flex;
-  margin-bottom: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $secondaryBg;
+  }
 }
 .profilecard__img {
   width: 70px;
@@ -15,6 +20,7 @@
 
   div:first-child {
     font-weight: 400;
+    color: $primaryText;
   }
 
   div:last-child {

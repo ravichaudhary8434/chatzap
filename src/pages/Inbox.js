@@ -1,15 +1,19 @@
-import { AllChats, ChatContainer } from "../components/Inbox";
+import { AllChats, ChatContainer, SendMessage } from "../components/Inbox";
 import { Routes, Route } from "react-router-dom";
 
 const Inbox = () => {
   return (
     <div className="inbox">
       <div className="inbox__container">
-        <AllChats />
-
-        <Routes>
-          <Route path="hello" element={<ChatContainer />} />
-        </Routes>
+        <div className="inbox__container__allchats">
+          <AllChats />
+        </div>
+        <div className="inbox__container__singlechat">
+          <Routes>
+            <Route exact path="direct/:id" element={<ChatContainer />} />
+            <Route path="/" element={<SendMessage />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
