@@ -8,7 +8,7 @@ const AllChats = () => {
       <div className="allchats__container">
         <div className="allchats__subheader">Messages</div>
         {ARRAY.map((data) => (
-          <ProfileCard id={data} />
+          <ProfileCard id={data} key={data} />
         ))}
       </div>
     </div>

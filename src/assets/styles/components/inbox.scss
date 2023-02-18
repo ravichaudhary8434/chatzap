@@ -13,6 +13,7 @@
   align-items: center;
   font-size: 18px;
   font-weight: bold;
+  height: 65px;
 }
 .allchats__subheader {
   padding: 20px;
@@ -31,8 +32,47 @@
 
 // Styles of chat container
 .chatcontainer {
-  width: 65%;
+  width: 100%;
   height: 100%;
+}
+.chatcontainer__header {
+  height: 65px;
+  width: 100%;
+  border-bottom: 1px solid $sepColor;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chatcontainer__header .chatcontainer__profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: 18px;
+
+  img {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+}
+.chatcontainer__header .chatcontainer__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.chatcontainer .chatcontainer__messages {
+  height: calc(100% - 65px - 84px);
+  width: 100%;
+  padding: 20px 20px 0 20px;
+  overflow-y: scroll;
+}
+.chatcontainer .chatcontainer__sendmsg {
+  height: 84px;
+  padding: 20px;
+  width: 100%;
 }
 
 // Styles for Send Message component
