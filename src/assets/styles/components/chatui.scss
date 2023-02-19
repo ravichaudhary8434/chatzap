@@ -1,0 +1,50 @@
+// Chat UI Component styles
+.chatui {
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px 0 20px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+// Chat Text component styles
+.chattext {
+  width: 100%;
+  display: flex;
+
+  &.left {
+    justify-content: flex-start;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+}
+.chattext .chattext__wrapper {
+  display: flex;
+  max-width: calc(50% - 20px);
+  margin: 10px 0;
+}
+.chattext .chattext__profile {
+  display: flex;
+  align-items: flex-end;
+  padding-right: 8px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+}
+.chattext .chattext__msg {
+  width: 100%;
+  padding: 16px;
+  min-height: 44px;
+  border-radius: 30px;
+  padding: 16px;
+  white-space: wrap;
+  text-overflow: wrap;
+  overflow-wrap: break-word;
+  background-color: $secondaryBg;
+}
