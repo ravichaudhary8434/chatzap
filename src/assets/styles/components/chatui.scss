@@ -46,5 +46,10 @@
   white-space: wrap;
   text-overflow: wrap;
   overflow-wrap: break-word;
+}
+.chattext.right .chattext__msg {
   background-color: $secondaryBg;
+}
+.chattext.left .chattext__msg {
+  border: 0.5px solid $sepColor;
 }

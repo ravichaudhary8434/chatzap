@@ -1,3 +1,4 @@
+import SendMessage from "../SendMessage";
 import ChatUI from "../ChatUI";
 
 const ImgUrl =
@@ -17,7 +18,9 @@ const ChatContainer = () => {
       <div className="chatcontainer__messages">
         <ChatUI />
       </div>
-      <div className="chatcontainer__sendmsg">Keyboard</div>
+      <div className="chatcontainer__sendmsg">
+        <SendMessage />
+      </div>
     </div>
   );
 };
