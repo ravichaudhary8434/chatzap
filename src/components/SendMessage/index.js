@@ -1,14 +1,20 @@
 import { useState } from "react";
+import EmojiSelector from "./EmojiSelector";
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
+
   const onSubmit = (e) => {
     e.preventDefault();
   };
 
+  const onSelectEmoji = (emoji) => {
+    setMessage(message + emoji);
+  };
+
   return (
     <form onSubmit={onSubmit} className="sendmessage">
-      <i className="fa-regular fa-face-smile"></i>
+      <EmojiSelector onSelectEmoji={onSelectEmoji} />
       <input
         name="sendMsg"
         value={message}
@@ -16,7 +22,7 @@ const SendMessage = () => {
         autoFocus={true}
         placeholder="Message..."
       />
-      <i class="fa-regular fa-image"></i>
+      <i className="fa-regular fa-image"></i>
       <i className="fa-regular fa-heart"></i>
     </form>
   );
