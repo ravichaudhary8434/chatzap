@@ -12,6 +12,7 @@
 .chattext {
   width: 100%;
   display: flex;
+  cursor: pointer;
 
   &.left {
     justify-content: flex-start;
@@ -23,6 +24,8 @@
 }
 .chattext .chattext__wrapper {
   display: flex;
+  align-items: center;
+  position: relative;
   max-width: calc(50% - 20px);
   margin: 10px 0;
 }
@@ -52,4 +55,38 @@
 }
 .chattext.left .chattext__msg {
   border: 0.5px solid $sepColor;
+}
+.chattext .chattext__wrapper .chattext__reaction {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(38, 38, 38);
+}
+.chattext.left .chattext__reaction {
+  top: calc(100% - 12px);
+  left: 36px;
+}
+.chattext.right .chattext__reaction {
+  top: calc(100% - 12px);
+  right: 4px;
+}
+.chattext .chattext__react__btns {
+  position: absolute;
+  display: none;
+  align-items: center;
+  left: calc(100% + 8px);
+
+  i {
+    margin-right: 8px;
+    font-size: 1.4rem;
+  }
+}
+.chattext.left:hover {
+  .chattext__react__btns {
+    display: flex;
+  }
 }
