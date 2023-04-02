@@ -4,6 +4,7 @@ import Button from "../components/Reusable/Button";
 import { TextInput, PasswordInput } from "../components/Reusable/FormInput";
 import { registerUser } from "../lib/api";
 import { useState } from "react";
+import { toastError, toastSuccess } from "../utils/toast";
 
 const signUpValidation = Yup.object().shape({
   email: Yup.string()
@@ -44,10 +45,10 @@ const Signup = () => {
 
     registerUser(data)
       .then((res) => {
-        console.log(res);
+        toastSuccess(res && res.data.message);
       })
       .catch((err) => {
-        console.log(err);
+        toastError(err && err.response && err.response.data.message);
       })
       .finally(() => {
         setLoader(false);
