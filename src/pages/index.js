@@ -1,3 +1,4 @@
 import Inbox from "./Inbox";
+import Signup from "./Signup";
 
-export { Inbox };
+export { Inbox, Signup };

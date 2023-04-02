@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import { Inbox } from "../pages";
+import { Inbox, Signup } from "../pages";
 
 const Router = () => (
   <Routes>
+    <Route path="/" element={<Signup />} />
     <Route path="/inbox/*" element={<Inbox />} />
   </Routes>
 );
