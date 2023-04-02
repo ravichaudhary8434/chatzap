@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import Button from "../components/Reusable/Button";
 import { TextInput, PasswordInput } from "../components/Reusable/FormInput";
-import { registerUser } from "../lib/api";
+import { loginUser } from "../lib/api";
 import { useState } from "react";
 import { toastError, toastSuccess } from "../utils/toast";
 
@@ -11,39 +11,30 @@ const signUpValidation = Yup.object().shape({
     .email("Please enter a valid email address")
     .required("Email is required"),
 
-  fullName: Yup.string().required("Full Name is required"),
-
   password: Yup.string()
     .required("Password is required")
     .min(6, "Password must be at least 6 characters")
     .max(32, "Password must be at most 32 characters"),
-
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Confirm Password is required"),
 });
 
-const Signup = () => {
+const Login = () => {
   const [loader, setLoader] = useState(false);
 
   const initialValues = () => {
     return {
-      fullName: "",
       email: "",
       password: "",
-      confirmPassword: "",
     };
   };
 
   const onSubmit = (values) => {
     setLoader(true);
     let data = {
-      fullName: values.fullName,
       email: values.email,
       password: values.password,
     };
 
-    registerUser(data)
+    loginUser(data)
       .then((res) => {
         toastSuccess(res && res.data.message);
       })
@@ -57,7 +48,7 @@ const Signup = () => {
 
   return (
     <div className="nonauth">
-      <div className="signup__container">
+      <div className="login__container">
         <Formik
           validationSchema={signUpValidation}
           initialValues={initialValues()}
@@ -65,12 +56,6 @@ const Signup = () => {
         >
           {({ values, setFieldValue }) => (
             <Form>
-              <TextInput
-                value={values.fullName}
-                name="fullName"
-                label="Full Name"
-                placeholder="Enter full name"
-              />
               <TextInput
                 value={values.email}
                 name="email"
@@ -85,13 +70,6 @@ const Signup = () => {
                 placeholder="Enter password"
               />
 
-              <PasswordInput
-                value={values.confirmPassword}
-                name="confirmPassword"
-                label="Confirm Password"
-                placeholder="Enter confirm password"
-              />
-
               <Button
                 type="submit"
                 primaryBlue
@@ -99,7 +77,7 @@ const Signup = () => {
                 height="48px"
                 disabled={loader}
               >
-                {loader ? "Loading..." : "Register"}
+                {loader ? "Loading..." : "Login"}
               </Button>
             </Form>
           )}
@@ -109,4 +87,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

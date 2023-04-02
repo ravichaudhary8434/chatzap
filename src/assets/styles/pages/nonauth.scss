@@ -1,4 +1,4 @@
-.signup {
+.nonauth {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,9 +6,17 @@
   height: 100%;
   background-color: $secondaryBg;
 }
-.signup__container {
+.nonauth .signup__container {
   width: 500px;
   min-height: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 32px;
+  background-color: $primaryBg;
+}
+.nonauth .login__container {
+  width: 500px;
+  min-height: 300px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 32px;

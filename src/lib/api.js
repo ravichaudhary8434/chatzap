@@ -11,3 +11,8 @@ export async function registerUser(data) {
   const resposnse = await API.post("/auth/register", data).then((res) => res);
   return resposnse;
 }
+
+export async function loginUser(data) {
+  const resposnse = await API.post("/auth/login", data).then((res) => res);
+  return resposnse;
+}
