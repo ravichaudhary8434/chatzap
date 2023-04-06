@@ -17,6 +17,33 @@ if (authToken && authToken !== undefined) {
 const authReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    case apiConstants.CHECK_IS_USER_LOGGED_IN:
+      newState = {
+        ...state,
+        loader: true,
+        error: "",
+        isLoggedIn: false,
+      };
+      return newState;
+
+    case apiConstants.CHECK_IS_USER_LOGGED_IN_SUCCESS:
+      newState = {
+        ...state,
+        loader: false,
+        isLoggedIn: true,
+      };
+
+      return newState;
+
+    case apiConstants.CHECK_IS_USER_LOGGED_IN_FAIL:
+      newState = {
+        ...state,
+        loader: false,
+        error: action.response,
+        isLoggedIn: false,
+      };
+      return newState;
+
     case apiConstants.LOGIN_USER:
       newState = {
         ...state,

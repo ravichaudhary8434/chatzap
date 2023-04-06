@@ -10,7 +10,7 @@ const Inbox = () => {
         </div>
         <div className="inbox__container__singlechat">
           <Routes>
-            <Route exact path="direct/:id" element={<ChatContainer />} />
+            <Route path="direct/:id" element={<ChatContainer />} />
             <Route path="/" element={<SendMessage />} />
           </Routes>
         </div>

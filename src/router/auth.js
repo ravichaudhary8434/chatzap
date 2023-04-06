@@ -3,7 +3,7 @@ import { Inbox } from "../pages";
 
 const AuthRouter = () => (
   <Routes>
-    <Route path="/inbox/*" element={<Inbox />} />
+    <Route path="/*" element={<Inbox />} />
   </Routes>
 );
 export default AuthRouter;
