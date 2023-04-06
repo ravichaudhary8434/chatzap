@@ -1,8 +1,10 @@
+import { useState } from "react";
 import SideNavbar from "./components/SideNavbar";
-import Router from "./router";
+import { AuthRouter, NonAuthRouter } from "./router";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="App">
       <ToastContainer
@@ -22,7 +24,7 @@ const App = () => {
         <SideNavbar />
       </div>
       <div className="App__container">
-        <Router />
+        {isLoggedIn ? <AuthRouter /> : <NonAuthRouter />}
       </div>
     </div>
   );

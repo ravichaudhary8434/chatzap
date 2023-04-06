@@ -2,9 +2,11 @@ import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import Button from "../components/Reusable/Button";
 import { TextInput, PasswordInput } from "../components/Reusable/FormInput";
-import { loginUser } from "../lib/api";
-import { useState } from "react";
+import { useEffect } from "react";
 import { toastError, toastSuccess } from "../utils/toast";
+import { loginUser } from "../actions/auth";
+import { compose } from "redux";
+import { connect } from "react-redux";
 
 const signUpValidation = Yup.object().shape({
   email: Yup.string()
@@ -17,9 +19,7 @@ const signUpValidation = Yup.object().shape({
     .max(32, "Password must be at most 32 characters"),
 });
 
-const Login = () => {
-  const [loader, setLoader] = useState(false);
-
+const Login = ({ signInUser, isLoggedIn, error, loader }) => {
   const initialValues = () => {
     return {
       email: "",
@@ -27,23 +27,25 @@ const Login = () => {
     };
   };
 
+  useEffect(() => {
+    if (isLoggedIn) {
+      toastSuccess("You've logged in successfully.");
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    if (error) {
+      toastError(error && error.data.message);
+    }
+  }, [error]);
+
   const onSubmit = (values) => {
-    setLoader(true);
     let data = {
       email: values.email,
       password: values.password,
     };
 
-    loginUser(data)
-      .then((res) => {
-        toastSuccess(res && res.data.message);
-      })
-      .catch((err) => {
-        toastError(err && err.response && err.response.data.message);
-      })
-      .finally(() => {
-        setLoader(false);
-      });
+    signInUser(data);
   };
 
   return (
@@ -54,7 +56,7 @@ const Login = () => {
           initialValues={initialValues()}
           onSubmit={onSubmit}
         >
-          {({ values, setFieldValue }) => (
+          {({ values }) => (
             <Form>
               <TextInput
                 value={values.email}
@@ -87,4 +89,15 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+  authToken: state.auth.authToken,
+  isLoggedIn: state.auth.isLoggedIn,
+  error: state.auth.error,
+  loader: state.auth.loader,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  signInUser: (data) => dispatch(loginUser(data)),
+});
+
+export default compose(connect(mapStateToProps, mapDispatchToProps))(Login);

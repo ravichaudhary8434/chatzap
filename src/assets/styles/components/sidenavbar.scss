@@ -1,10 +1,13 @@
 .sidenav {
-  width: 100%;
+  width: 300px;
   height: 100%;
   background-color: $primaryBg;
-  color: $primaryText;
   padding: 40px 0 0 20px;
+  border-right: 1px solid $sepColor;
+}
+.sidenav .sidenav__brand {
+  text-decoration: none;
+  color: $primaryText !important;
   font-size: 32px;
   font-weight: bold;
-  border-right: 1px solid $sepColor;
 }

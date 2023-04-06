@@ -1,11 +1,4 @@
-import { Routes, Route } from "react-router-dom";
-import { Inbox, Signup, Login } from "../pages";
+import AuthRouter from "./auth";
+import NonAuthRouter from "./nonAuth";
 
-const Router = () => (
-  <Routes>
-    <Route path="/" element={<Signup />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/inbox/*" element={<Inbox />} />
-  </Routes>
-);
-export default Router;
+export { AuthRouter, NonAuthRouter };
