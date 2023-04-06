@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import { checkIsUserLoggedIn } from "./actions/auth";
+import { PageLoader } from "./components/Loader";
 
 const App = ({ isLoggedIn, loader, checkLogin }) => {
   useEffect(() => {
@@ -33,7 +34,7 @@ const App = ({ isLoggedIn, loader, checkLogin }) => {
       </div>
       <div className="App__container">
         {loader ? (
-          <div>Loading...</div>
+          <PageLoader />
         ) : isLoggedIn ? (
           <AuthRouter />
         ) : (

@@ -5,6 +5,7 @@ const NonAuthRouter = () => (
   <Routes>
     <Route path="/" element={<Login />} />
     <Route path="/register" element={<Signup />} />
+    <Route path="*" element={<Login />} />
   </Routes>
 );
 export default NonAuthRouter;
